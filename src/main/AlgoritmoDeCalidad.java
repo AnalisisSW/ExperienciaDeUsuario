@@ -41,6 +41,11 @@ public class AlgoritmoDeCalidad {
 				"Comportamiento En El Tiempo: (" + getComportamientoEnElTiempo() + ")");
 	}
 	
+	public void mostrarFiabilidad() {
+		JOptionPane.showMessageDialog(null, "Tolerancia a Fallos: (" + getToleranciaAFallos() + ")\n" +
+				"Capacidad de Recuperacion ante Errores: (" + getCapacidadDeRecuperacionDeErrores() + ")");
+	}
+	
 	
 	
 	
@@ -99,7 +104,7 @@ public class AlgoritmoDeCalidad {
 
 
 	//Getters and setters
-		public Integer getSeguridadDeAcceso() {
+		public  Integer getSeguridadDeAcceso() {
 			return seguridadDeAcceso;
 		}
 

@@ -61,8 +61,8 @@ public class Funcionabilidad extends JFrame {
 	 * Create the frame.
 	 */
 	public Funcionabilidad() {
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setTitle("Funcionabilidad");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 608, 526);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -140,10 +140,9 @@ public class Funcionabilidad extends JFrame {
 		btnSiguiente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				algoritmo.mostrarFuncionabilidad();
+				algoritmo.mostrarFuncionabilidad();				
+				Eficiencia.nuevaVista(algoritmo);
 				dispose();
-				Eficiencia ef = new Eficiencia();
-				ef.nuevaVista();
 				
 			}
 		});

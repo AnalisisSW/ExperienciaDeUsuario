@@ -27,22 +27,22 @@ public class Eficiencia extends JFrame {
 	private JPanel contentPane;
 	private final ButtonGroup utilizacionRecursos = new ButtonGroup();
 	private final ButtonGroup comportamientoEnTiempo = new ButtonGroup();
-	AlgoritmoDeCalidad algoritmo = new AlgoritmoDeCalidad();
+	AlgoritmoDeCalidad algoritmo;// = new AlgoritmoDeCalidad();
 	private static Integer EXCELENTE = 10,
 						   MUY_BUENO = 8,
 						   BUENO = 6,
 						   REGULAR = 4,
 						   MALO = 2;
 						   
-
+	
 	/**
 	 * Launch the application.
 	 */
-	public static void nuevaVista() {
+	public static void nuevaVista(AlgoritmoDeCalidad algoritmo) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Eficiencia frame = new Eficiencia();
+					Eficiencia frame = new Eficiencia(algoritmo);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -54,7 +54,8 @@ public class Eficiencia extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Eficiencia() {
+	public Eficiencia(AlgoritmoDeCalidad algoritmo) {
+		this.algoritmo = algoritmo;
 		setTitle("Eficiencia");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 609, 527);
@@ -210,6 +211,12 @@ public class Eficiencia extends JFrame {
 		btnSiguiente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				algoritmo.mostrarEficiencia();
+				algoritmo.mostrarFuncionabilidad();
+				
+				Fiabilidad.nuevaVista(algoritmo);
+				dispose();
+
+//				fi.mostrarVista();
 			}
 		});
 		btnSiguiente.setBounds(456, 442, 97, 25);
