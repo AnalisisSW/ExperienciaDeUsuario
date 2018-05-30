@@ -46,6 +46,11 @@ public class AlgoritmoDeCalidad {
 				"Capacidad de Recuperacion ante Errores: (" + getCapacidadDeRecuperacionDeErrores() + ")");
 	}
 	
+	public void mostrarMantenibilidad() {
+		JOptionPane.showMessageDialog(null, "Analizibilidad Del Codigo: (" + getAnalizabilidadDelCodigo() + ")\n" +
+				"Cambiabilidad del Codigo: (" + getCambiabilidadDelCodigo() + ")\n" + 
+				"Estabilidad del Codigo: (" + getEstabilidadDelCodigo() + ")");
+	}
 	
 	
 	

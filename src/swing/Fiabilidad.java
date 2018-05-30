@@ -61,7 +61,7 @@ public class Fiabilidad extends JFrame {
 	public Fiabilidad(AlgoritmoDeCalidad algoritmo) {
 		setTitle("Fiabilidad");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 600, 500);
+		setBounds(100, 100, 600, 511);
 		contentPane = new JPanel();
 		contentPane.setToolTipText("asd");
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -212,6 +212,9 @@ public class Fiabilidad extends JFrame {
 				algoritmo.mostrarFiabilidad();
 				algoritmo.mostrarEficiencia();
 				algoritmo.mostrarFuncionabilidad();
+				
+				Mantenibilidad.nuevaVista(algoritmo);
+				dispose();
 			}
 		});
 		btnSiguiente.setBounds(420, 427, 89, 23);
