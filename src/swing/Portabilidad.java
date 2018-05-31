@@ -70,6 +70,7 @@ public class Portabilidad extends JFrame {
 		contentPane.add(txtpnCapacidadDelProducto);
 		
 		JRadioButton rdbtnExcelenteAd = new JRadioButton("Excelente");
+		rdbtnExcelenteAd.setSelected(true);
 		rdbtnExcelenteAd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				alg.setAdaptabilidad(EXCELENTE);
@@ -130,6 +131,7 @@ public class Portabilidad extends JFrame {
 		contentPane.add(txtpnCapacidadDelProducto_1);
 		
 		JRadioButton rdbtnExcelente = new JRadioButton("Excelente");
+		rdbtnExcelente.setSelected(true);
 		rdbtnExcelente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				alg.setInstalabilidad(EXCELENTE);
