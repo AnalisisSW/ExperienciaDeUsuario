@@ -263,6 +263,8 @@ public class Mantenibilidad extends JFrame {
 				
 				//llama a vtana usabilidad 
 				alg.mostrarMantenibilidad();
+				Usabilidad.nuevaVista(alg);
+				dispose();
 				
 			}
 		});
