@@ -21,13 +21,14 @@ import java.awt.event.ActionEvent;
 import javax.swing.ButtonGroup;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.SystemColor;
 
 public class Funcionabilidad extends JFrame {
 
 	private JPanel contentPane;
 	private final ButtonGroup segAcceso = new ButtonGroup();
 	private final ButtonGroup exactitudResultado = new ButtonGroup();
-	AlgoritmoDeCalidad algoritmo = new AlgoritmoDeCalidad();
+	AlgoritmoDeCalidad algoritmo;
 	private static Integer EXCELENTE = 10,
 						   MUY_BUENO = 8,
 						   BUENO = 6,
@@ -43,11 +44,11 @@ public class Funcionabilidad extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void nuevaVista(AlgoritmoDeCalidad algo) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Funcionabilidad frame = new Funcionabilidad();
+					Funcionabilidad frame = new Funcionabilidad(algo);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -60,7 +61,8 @@ public class Funcionabilidad extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Funcionabilidad() {
+	public Funcionabilidad(AlgoritmoDeCalidad algo) {
+		this.algoritmo = algo;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setTitle("Funcionabilidad");
 		setBounds(100, 100, 608, 526);
@@ -72,8 +74,10 @@ public class Funcionabilidad extends JFrame {
 		establecerDefault(); //Establezco valores default (Excelente)
 		
 		JTextPane txtpnSeguridadDeAcceso = new JTextPane();
-		txtpnSeguridadDeAcceso.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		txtpnSeguridadDeAcceso.setText("Capacidad del producto software para asegurar la integridad de los datos y la confidencialidad de \u00E9stos - Caracter\u00EDsticas a medir: Encriptaci\u00F3n de datos e inicio de sesi\u00F3n de usuarios");
+		txtpnSeguridadDeAcceso.setBackground(SystemColor.activeCaptionBorder);
+		txtpnSeguridadDeAcceso.setEditable(false);
+		txtpnSeguridadDeAcceso.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtpnSeguridadDeAcceso.setText("\u2022 Capacidad del producto software para asegurar la integridad de los datos y la confidencialidad de \u00E9stos.\r\n\u2022 Encriptaci\u00F3n de datos e inicio de sesi\u00F3n de usuarios");
 		txtpnSeguridadDeAcceso.setBounds(10, 89, 306, 116);
 		contentPane.add(txtpnSeguridadDeAcceso);
 		
@@ -140,7 +144,7 @@ public class Funcionabilidad extends JFrame {
 		btnSiguiente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				algoritmo.mostrarFuncionabilidad();				
+				//algoritmo.mostrarFuncionabilidad();				
 				Eficiencia.nuevaVista(algoritmo);
 				dispose();
 				
@@ -159,7 +163,10 @@ public class Funcionabilidad extends JFrame {
 		contentPane.add(btnSalir);
 	
 		JTextPane txtpnCapacidadDelProducto = new JTextPane();
-		txtpnCapacidadDelProducto.setText("Capacidad del producto software para proporcionar los resultados con el grado necesario de precisi\u00F3n.");
+		txtpnCapacidadDelProducto.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		txtpnCapacidadDelProducto.setBackground(SystemColor.activeCaptionBorder);
+		txtpnCapacidadDelProducto.setEditable(false);
+		txtpnCapacidadDelProducto.setText("\u2022 Capacidad del producto software para proporcionar los resultados con el grado necesario de precisi\u00F3n.");
 		txtpnCapacidadDelProducto.setBounds(10, 294, 306, 92);
 		contentPane.add(txtpnCapacidadDelProducto);
 		

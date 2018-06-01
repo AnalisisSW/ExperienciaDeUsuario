@@ -17,6 +17,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.SystemColor;
 
 public class Usabilidad extends JFrame {
 
@@ -67,8 +68,11 @@ public class Usabilidad extends JFrame {
 		contentPane.add(lblCapacidadDeSer);
 		
 		JTextPane txtpnCapacidadDelProducto = new JTextPane();
-		txtpnCapacidadDelProducto.setText("Capacidad del producto software para ayudar a los usuarios cuando necesiten asistencia.\r\n\r\nCaracter\u00EDsticas a medir: \r\n\u2022Posee ayuda contextual sobre men\u00FAes y botones de acci\u00F3n\r\n\u2022Incorporaci\u00F3n de manual de usuario en el sistema con un men\u00FA dedicado.");
-		txtpnCapacidadDelProducto.setBounds(24, 55, 299, 134);
+		txtpnCapacidadDelProducto.setEditable(false);
+		txtpnCapacidadDelProducto.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtpnCapacidadDelProducto.setBackground(SystemColor.activeCaptionBorder);
+		txtpnCapacidadDelProducto.setText("\u2022 Capacidad del producto software para ayudar a los usuarios cuando necesiten asistencia.\r\n\r\nCaracter\u00EDsticas a medir: \r\n\u2022 Posee ayuda contextual sobre men\u00FAes y botones de acci\u00F3n\r\n\u2022 Incorporaci\u00F3n de manual de usuario en el sistema con un men\u00FA dedicado.");
+		txtpnCapacidadDelProducto.setBounds(24, 55, 299, 151);
 		contentPane.add(txtpnCapacidadDelProducto);
 		
 		JRadioButton rdbtnExcelenteCE = new JRadioButton("Excelente");
@@ -124,12 +128,15 @@ public class Usabilidad extends JFrame {
 		
 		JLabel lblCapacidadDeSer_1 = new JLabel("Capacidad de ser Operado:");
 		lblCapacidadDeSer_1.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblCapacidadDeSer_1.setBounds(24, 202, 221, 29);
+		lblCapacidadDeSer_1.setBounds(24, 219, 221, 29);
 		contentPane.add(lblCapacidadDeSer_1);
 		
 		JTextPane txtpnApacidadDelProducto = new JTextPane();
-		txtpnApacidadDelProducto.setText("\u2022Capacidad del producto software para ayudar a los usuarios cuando necesiten asistencia.\r\n\r\n\u2022Manual de usuario incorporado al sistema como un men\u00FA dedicado");
-		txtpnApacidadDelProducto.setBounds(24, 244, 299, 134);
+		txtpnApacidadDelProducto.setEditable(false);
+		txtpnApacidadDelProducto.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtpnApacidadDelProducto.setBackground(SystemColor.activeCaptionBorder);
+		txtpnApacidadDelProducto.setText("\u2022 Capacidad del producto software para ayudar a los usuarios cuando necesiten asistencia.\r\n\r\n\u2022 Manual de usuario incorporado al sistema como un men\u00FA dedicado");
+		txtpnApacidadDelProducto.setBounds(24, 261, 299, 134);
 		contentPane.add(txtpnApacidadDelProducto);
 		
 		JRadioButton rdbtnExcelenteCO = new JRadioButton("Excelente");
@@ -185,12 +192,15 @@ public class Usabilidad extends JFrame {
 		
 		JLabel lblCapacidadDeSer_2 = new JLabel("Capacidad de ser Atractivo:");
 		lblCapacidadDeSer_2.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblCapacidadDeSer_2.setBounds(24, 403, 221, 29);
+		lblCapacidadDeSer_2.setBounds(24, 423, 221, 29);
 		contentPane.add(lblCapacidadDeSer_2);
 		
 		JTextPane txtpnCapacidadDelProducto_1 = new JTextPane();
-		txtpnCapacidadDelProducto_1.setText("\u2022Capacidad del producto software de ser utilizado sin asistencia adicional.\r\n");
-		txtpnCapacidadDelProducto_1.setBounds(24, 445, 307, 54);
+		txtpnCapacidadDelProducto_1.setEditable(false);
+		txtpnCapacidadDelProducto_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtpnCapacidadDelProducto_1.setBackground(SystemColor.activeCaptionBorder);
+		txtpnCapacidadDelProducto_1.setText("\u2022 Capacidad del producto software de ser utilizado sin asistencia adicional.\r\n");
+		txtpnCapacidadDelProducto_1.setBounds(24, 465, 307, 54);
 		contentPane.add(txtpnCapacidadDelProducto_1);
 		
 		JRadioButton rdbtnExcelente = new JRadioButton("Excelente");
@@ -261,10 +271,10 @@ public class Usabilidad extends JFrame {
 				//LLAMAR A PORTABILIDAD
 				
 				Portabilidad.nuevaVista(alg);
-				System.out.println("cap entendido " + alg.getCapacidadDeSerEntendido() );
-				System.out.println("cap operado " + alg.getCapacidadDeSerOperado() );
-				System.out.println("cap atrac " + alg.getCapacidadDeSerAtractivo() );
-				
+//				System.out.println("cap entendido " + alg.getCapacidadDeSerEntendido() );
+//				System.out.println("cap operado " + alg.getCapacidadDeSerOperado() );
+//				System.out.println("cap atrac " + alg.getCapacidadDeSerAtractivo() );
+//				
 				dispose();
 			}
 		});

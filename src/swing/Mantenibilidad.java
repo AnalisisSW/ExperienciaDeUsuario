@@ -16,6 +16,7 @@ import javax.swing.JButton;
 import javax.swing.ButtonGroup;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.SystemColor;
 
 public class Mantenibilidad extends JFrame {
 
@@ -68,6 +69,9 @@ public class Mantenibilidad extends JFrame {
 		contentPane.add(lblAnalizabilidaddelcodigo);
 		
 		JTextPane txtpnCapacidadDelCdigo = new JTextPane();
+		txtpnCapacidadDelCdigo.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtpnCapacidadDelCdigo.setBackground(SystemColor.activeCaptionBorder);
+		txtpnCapacidadDelCdigo.setEditable(false);
 		txtpnCapacidadDelCdigo.setText("\u2022Capacidad del c\u00F3digo para ser analizado\r\n\u2022Analizabilidad del c\u00F3digo teniendo en cuenta el porcentaje de comentarios por m\u00E9todo y en general");
 		txtpnCapacidadDelCdigo.setBounds(38, 79, 259, 85);
 		contentPane.add(txtpnCapacidadDelCdigo);
@@ -131,6 +135,9 @@ public class Mantenibilidad extends JFrame {
 		contentPane.add(lblCambiabilidadDelCodigo);
 		
 		JTextPane txtpnCapacidadDelCdigo_1 = new JTextPane();
+		txtpnCapacidadDelCdigo_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtpnCapacidadDelCdigo_1.setBackground(SystemColor.activeCaptionBorder);
+		txtpnCapacidadDelCdigo_1.setEditable(false);
 		txtpnCapacidadDelCdigo_1.setText("\u2022Capacidad del c\u00F3digo para ser cambiado\r\n\u2022Analizabilidad del c\u00F3digo teniendo en cuenta la complejidad ciclom\u00E1tica del m\u00E9todo.");
 		txtpnCapacidadDelCdigo_1.setBounds(38, 231, 259, 85);
 		contentPane.add(txtpnCapacidadDelCdigo_1);
@@ -192,6 +199,9 @@ public class Mantenibilidad extends JFrame {
 		contentPane.add(lblEstabilidadDelCodigo);
 		
 		JTextPane txtpnEstabilidadPromedioDe = new JTextPane();
+		txtpnEstabilidadPromedioDe.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtpnEstabilidadPromedioDe.setBackground(SystemColor.activeCaptionBorder);
+		txtpnEstabilidadPromedioDe.setEditable(false);
 		txtpnEstabilidadPromedioDe.setText("\u2022Estabilidad\r\n\u2022Promedio de fallas del sistema por prueba.");
 		txtpnEstabilidadPromedioDe.setBounds(38, 396, 259, 77);
 		contentPane.add(txtpnEstabilidadPromedioDe);
@@ -262,7 +272,7 @@ public class Mantenibilidad extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				//llama a vtana usabilidad 
-				alg.mostrarMantenibilidad();
+				//alg.mostrarMantenibilidad();
 				Usabilidad.nuevaVista(alg);
 				dispose();
 				

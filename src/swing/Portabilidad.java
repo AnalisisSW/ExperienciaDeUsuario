@@ -7,17 +7,21 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import com.sun.prism.paint.Color;
+
 import main.AlgoritmoDeCalidad;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import javax.swing.JTextPane;
+import javax.swing.UIManager;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.SystemColor;
 
 public class Portabilidad extends JFrame {
 
@@ -30,6 +34,7 @@ public class Portabilidad extends JFrame {
 			   MALO = 2;
 	private final ButtonGroup adaptabilidad = new ButtonGroup();
 	private final ButtonGroup instalabilidad = new ButtonGroup();
+
 	/**
 	 * Launch the application.
 	 */
@@ -46,10 +51,12 @@ public class Portabilidad extends JFrame {
 		});
 	}
 
+
 	/**
 	 * Create the frame.
 	 */
 	public Portabilidad(AlgoritmoDeCalidad algoritmo) {
+		setTitle("Portabilidad");
 		this.alg = algoritmo;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 606, 498);
@@ -59,13 +66,20 @@ public class Portabilidad extends JFrame {
 		contentPane.setLayout(null);
 		establecerDefault();
 		
+		UIManager UI=new UIManager();
+		UI.put("OptionPane.background", Color.GREEN);
+		UI.put("Panel.background", Color.BLACK);
+		
 		JLabel lblAdaptabilidad = new JLabel("Adaptabilidad:");
-		lblAdaptabilidad.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblAdaptabilidad.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblAdaptabilidad.setBounds(27, 37, 176, 21);
 		contentPane.add(lblAdaptabilidad);
 		
 		JTextPane txtpnCapacidadDelProducto = new JTextPane();
-		txtpnCapacidadDelProducto.setText("Capacidad del producto software de adaptarse a diferentes sistemas operativos sin cambiar su estructura interna");
+		txtpnCapacidadDelProducto.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtpnCapacidadDelProducto.setBackground(SystemColor.activeCaptionBorder);
+		txtpnCapacidadDelProducto.setEditable(false);
+		txtpnCapacidadDelProducto.setText("\u2022 Capacidad del producto software de adaptarse a diferentes sistemas operativos sin cambiar su estructura interna");
 		txtpnCapacidadDelProducto.setBounds(27, 69, 320, 70);
 		contentPane.add(txtpnCapacidadDelProducto);
 		
@@ -121,12 +135,15 @@ public class Portabilidad extends JFrame {
 		contentPane.add(rdbtnMaloAd);
 		
 		JLabel lblInstalabilidad = new JLabel("Instalabilidad:");
-		lblInstalabilidad.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblInstalabilidad.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblInstalabilidad.setBounds(27, 198, 116, 21);
 		contentPane.add(lblInstalabilidad);
 		
 		JTextPane txtpnCapacidadDelProducto_1 = new JTextPane();
-		txtpnCapacidadDelProducto_1.setText("Capacidad del producto software de poder ser instalado en una cantidad m\u00EDnima de pasos.");
+		txtpnCapacidadDelProducto_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtpnCapacidadDelProducto_1.setBackground(SystemColor.activeCaptionBorder);
+		txtpnCapacidadDelProducto_1.setEditable(false);
+		txtpnCapacidadDelProducto_1.setText("\u2022 Capacidad del producto software de poder ser instalado en una cantidad m\u00EDnima de pasos.");
 		txtpnCapacidadDelProducto_1.setBounds(27, 231, 320, 70);
 		contentPane.add(txtpnCapacidadDelProducto_1);
 		
@@ -194,15 +211,25 @@ public class Portabilidad extends JFrame {
 		btnFinalizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				JOptionPane.showMessageDialog(null, "Resultado obtenido: " + AlgoritmoDeCalidad.calculoDeExperiencia(algoritmo) ); 
+				String resultado = AlgoritmoDeCalidad.calculoDeExperiencia(algoritmo);
+				 
+
+				 
+				switch (resultado) {
+				case "BUENA": JOptionPane.showMessageDialog(null, "Resultado obtenido: BUENA ", "Estadistica", JOptionPane.INFORMATION_MESSAGE ); 
+					break;
+				case "REGULAR": JOptionPane.showMessageDialog(null, "Resultado obtenido: REGULAR ", "Estadistica", JOptionPane.INFORMATION_MESSAGE ); 
+					break;
+				case "MALA": JOptionPane.showMessageDialog(null, "Resultado obtenido: MALO ", "Estadistica", JOptionPane.INFORMATION_MESSAGE ); 
+					break;
+				}
+				
+				
+				dispose();
 			}
 		});
-		btnFinalizar.setBounds(413, 408, 89, 23);
+		btnFinalizar.setBounds(463, 408, 89, 23);
 		contentPane.add(btnFinalizar);
-		
-		JButton btnAtrs = new JButton("Atr\u00E1s");
-		btnAtrs.setBounds(306, 408, 89, 23);
-		contentPane.add(btnAtrs);
 	}
 	
 	public void establecerDefault() {

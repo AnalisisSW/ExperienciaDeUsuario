@@ -26,6 +26,7 @@ import javax.swing.JList;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.SystemColor;
 
 public class Fiabilidad extends JFrame {
 
@@ -58,7 +59,8 @@ public class Fiabilidad extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Fiabilidad(AlgoritmoDeCalidad algoritmo) {
+	public Fiabilidad(AlgoritmoDeCalidad algo) {
+		this.algoritmo = algo;
 		setTitle("Fiabilidad");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 511);
@@ -67,6 +69,7 @@ public class Fiabilidad extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		establecerDefault();
 		
 		JLabel lblTolFallos = new JLabel("Tolerancia A Fallos:");
 		lblTolFallos.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -74,8 +77,11 @@ public class Fiabilidad extends JFrame {
 		contentPane.add(lblTolFallos);
 		
 		JTextPane txtpnCapacidadDelProducto = new JTextPane();
+		txtpnCapacidadDelProducto.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtpnCapacidadDelProducto.setBackground(SystemColor.activeCaptionBorder);
+		txtpnCapacidadDelProducto.setEditable(false);
 		txtpnCapacidadDelProducto.setText("Capacidad del producto software para mantener la integridad de los datos cuando se producen fallas en el sistema.\r\nCaracter\u00EDsticas a medir: \r\n\u2022 Protecci\u00F3n de los datos necesarios al generarse un error\r\n\u2022 Generaci\u00F3n de log con las actividades que el sistema estaba haciendo antes de fallar.");
-		txtpnCapacidadDelProducto.setBounds(21, 63, 294, 118);
+		txtpnCapacidadDelProducto.setBounds(21, 63, 304, 149);
 		contentPane.add(txtpnCapacidadDelProducto);
 		
 		JRadioButton rdbtnExcelenteTF = new JRadioButton("Excelente");
@@ -130,13 +136,16 @@ public class Fiabilidad extends JFrame {
 		contentPane.add(rdbtnMaloTF);
 		
 		JTextPane txtpnCapacidadDelSistema = new JTextPane();
+		txtpnCapacidadDelSistema.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtpnCapacidadDelSistema.setBackground(SystemColor.activeCaptionBorder);
+		txtpnCapacidadDelSistema.setEditable(false);
 		txtpnCapacidadDelSistema.setText("Capacidad del sistema de reanudar sus actividades cuando se producen errores cr\u00EDticos.\r\nCaracter\u00EDsticas a medir:\r\n \u2022 Reanudaci\u00F3n de actividades al producirse una falla cr\u00EDtica.\r\n \u2022 Reanudaci\u00F3n del sistema desde el estado en que estaba antes de fallar.");
-		txtpnCapacidadDelSistema.setBounds(21, 288, 294, 108);
+		txtpnCapacidadDelSistema.setBounds(21, 271, 304, 132);
 		contentPane.add(txtpnCapacidadDelSistema);
 		
 		JLabel lblCapacidadDeRecuperacion = new JLabel("Capacidad de Recuperacion Ante Errores:");
 		lblCapacidadDeRecuperacion.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblCapacidadDeRecuperacion.setBounds(21, 261, 294, 14);
+		lblCapacidadDeRecuperacion.setBounds(21, 244, 294, 14);
 		contentPane.add(lblCapacidadDeRecuperacion);
 		
 		JRadioButton rdbtnExcelente = new JRadioButton("Excelente");
@@ -147,7 +156,7 @@ public class Fiabilidad extends JFrame {
 			}
 		});
 		recuperacionDeErrores.add(rdbtnExcelente);
-		rdbtnExcelente.setBounds(387, 276, 109, 23);
+		rdbtnExcelente.setBounds(387, 257, 109, 23);
 		contentPane.add(rdbtnExcelente);
 		
 		JRadioButton rdbtnMuyBueno = new JRadioButton("Muy Bueno");
@@ -157,7 +166,7 @@ public class Fiabilidad extends JFrame {
 			}
 		});
 		recuperacionDeErrores.add(rdbtnMuyBueno);
-		rdbtnMuyBueno.setBounds(387, 304, 109, 23);
+		rdbtnMuyBueno.setBounds(387, 285, 109, 23);
 		contentPane.add(rdbtnMuyBueno);
 		
 		JRadioButton rdbtnBueno = new JRadioButton("Bueno");
@@ -167,7 +176,7 @@ public class Fiabilidad extends JFrame {
 			}
 		});
 		recuperacionDeErrores.add(rdbtnBueno);
-		rdbtnBueno.setBounds(387, 330, 109, 23);
+		rdbtnBueno.setBounds(387, 311, 109, 23);
 		contentPane.add(rdbtnBueno);
 		
 		JRadioButton rdbtnRegular = new JRadioButton("Regular");
@@ -177,7 +186,7 @@ public class Fiabilidad extends JFrame {
 			}
 		});
 		recuperacionDeErrores.add(rdbtnRegular);
-		rdbtnRegular.setBounds(387, 356, 109, 23);
+		rdbtnRegular.setBounds(387, 337, 109, 23);
 		contentPane.add(rdbtnRegular);
 		
 		JRadioButton rdbtnMalo = new JRadioButton("Malo");
@@ -187,31 +196,15 @@ public class Fiabilidad extends JFrame {
 			}
 		});
 		recuperacionDeErrores.add(rdbtnMalo);
-		rdbtnMalo.setBounds(387, 382, 109, 23);
+		rdbtnMalo.setBounds(387, 363, 109, 23);
 		contentPane.add(rdbtnMalo);
-		
-		JButton btnAtrs = new JButton("Atr\u00E1s");
-		btnAtrs.setEnabled(false);
-		btnAtrs.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				dispose();
-				//Eficiencia ef = new Eficiencia();
-				Eficiencia.nuevaVista(algoritmo);
-				algoritmo.mostrarEficiencia();
-				
-				
-			}
-		});
-		btnAtrs.setBounds(214, 427, 89, 23);
-		contentPane.add(btnAtrs);
 		
 		JButton btnSiguiente = new JButton("Siguiente");
 		btnSiguiente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				algoritmo.mostrarFiabilidad();
-				algoritmo.mostrarEficiencia();
-				algoritmo.mostrarFuncionabilidad();
+				//algoritmo.mostrarFiabilidad();
+				//algoritmo.mostrarEficiencia();
+				//algoritmo.mostrarFuncionabilidad();
 				
 				Mantenibilidad.nuevaVista(algoritmo);
 				dispose();
@@ -228,5 +221,11 @@ public class Fiabilidad extends JFrame {
 		});
 		btnSalir.setBounds(10, 427, 89, 23);
 		contentPane.add(btnSalir);
+	}
+	
+	public void establecerDefault() {
+		
+		algoritmo.setToleranciaAFallos(EXCELENTE);
+		algoritmo.setCapacidadDeRecuperacionDeErrores(EXCELENTE);
 	}
 }

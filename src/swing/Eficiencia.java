@@ -72,10 +72,10 @@ public class Eficiencia extends JFrame {
 		contentPane.add(lblUtilizacionDeRecursos);
 		
 		JTextPane txtpnEficienciaDelProducto = new JTextPane();
-		txtpnEficienciaDelProducto.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		txtpnEficienciaDelProducto.setBackground(SystemColor.activeCaptionBorder);
 		txtpnEficienciaDelProducto.setEditable(false);
-		txtpnEficienciaDelProducto.setText("Eficiencia del producto software de acuerdo al porcentaje de uso de procesador que realice.");
+		txtpnEficienciaDelProducto.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtpnEficienciaDelProducto.setBackground(SystemColor.activeCaptionBorder);
+		txtpnEficienciaDelProducto.setText("\u2022 Eficiencia del producto software de acuerdo al porcentaje de uso de procesador que realice.");
 		txtpnEficienciaDelProducto.setBounds(24, 81, 230, 80);
 		contentPane.add(txtpnEficienciaDelProducto);
 		
@@ -140,8 +140,10 @@ public class Eficiencia extends JFrame {
 		contentPane.add(lblComportamientoEnEl);
 		
 		JTextPane txtpnTiempoQueEst = new JTextPane();
+		txtpnTiempoQueEst.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtpnTiempoQueEst.setEditable(false);
 		txtpnTiempoQueEst.setBackground(SystemColor.activeCaptionBorder);
-		txtpnTiempoQueEst.setText("Tiempo que est\u00E1 el producto software sin informarle al usuario del estado en que se encuentra la solicitud que realiz\u00F3.");
+		txtpnTiempoQueEst.setText("\u2022 Tiempo que est\u00E1 el producto software sin informarle al usuario del estado en que se encuentra la solicitud que realiz\u00F3.");
 		txtpnTiempoQueEst.setBounds(27, 313, 227, 89);
 		contentPane.add(txtpnTiempoQueEst);
 		
@@ -210,8 +212,8 @@ public class Eficiencia extends JFrame {
 		JButton btnSiguiente = new JButton("Siguiente");
 		btnSiguiente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				algoritmo.mostrarEficiencia();
-				algoritmo.mostrarFuncionabilidad();
+				//algoritmo.mostrarEficiencia();
+				//algoritmo.mostrarFuncionabilidad();
 				
 				Fiabilidad.nuevaVista(algoritmo);
 				dispose();
