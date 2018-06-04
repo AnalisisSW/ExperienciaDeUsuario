@@ -66,9 +66,6 @@ public class Portabilidad extends JFrame {
 		contentPane.setLayout(null);
 		establecerDefault();
 		
-		UIManager UI=new UIManager();
-		UI.put("OptionPane.background", Color.GREEN);
-		UI.put("Panel.background", Color.BLACK);
 		
 		JLabel lblAdaptabilidad = new JLabel("Adaptabilidad:");
 		lblAdaptabilidad.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -211,6 +208,7 @@ public class Portabilidad extends JFrame {
 		btnFinalizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				/*
 				String resultado = AlgoritmoDeCalidad.calculoDeExperiencia(algoritmo);
 				 
 
@@ -224,7 +222,9 @@ public class Portabilidad extends JFrame {
 					break;
 				}
 				
+				*/
 				
+				ReporteFinal.nuevaVista(alg);
 				dispose();
 			}
 		});

@@ -26,8 +26,15 @@ public class AlgoritmoDeCalidad {
 					capacidadDeSerAtractivo,
 					adaptabilidad,
 					instalabilidad;
-					
+			
 
+	private static Float 	 resultadoFuncionabilidad,
+							 resultadoEficiencia,
+							 resultadoFiabilidad,
+							 resultadoMantenibilidad,
+							 resultadoUsabilidad,
+							 resultadoPortabilidad,
+							 resultadoFinal;
 
 	
 	
@@ -65,57 +72,106 @@ public class AlgoritmoDeCalidad {
 		pesoDeUsabilidad = 7;
 		pesoDePortabilidad = 3;
 		
+
+		 resultadoFuncionabilidad = (float) ((float)( ( algoritmo.getSeguridadDeAcceso() + algoritmo.getExactitudDeResultados() )/2) * (pesoDeFuncionabilidad*0.1));
+		 resultadoEficiencia = (float)((float)((algoritmo.getUtilizacionDeRecursos()+algoritmo.getComportamientoEnElTiempo())/2) * (pesoDeEficiencia*0.1));
+		 resultadoFiabilidad = (float)((float)((algoritmo.getToleranciaAFallos() + algoritmo.getCapacidadDeRecuperacionDeErrores())/2) * (pesoDeFiabilidad*0.1));
+		 resultadoMantenibilidad = (float)((float)((algoritmo.getAnalizabilidadDelCodigo() + algoritmo.getCambiabilidadDelCodigo() + algoritmo.getEstabilidadDelCodigo() )/3) * (pesoDeMantenibilidad*0.1));
+		 resultadoUsabilidad = (float)((float)((algoritmo.getCapacidadDeSerEntendido() + algoritmo.getCapacidadDeSerOperado() + algoritmo.getCapacidadDeSerAtractivo() )/3) * (pesoDeUsabilidad*0.1));
+		 resultadoPortabilidad = (float)((float)((algoritmo.getAdaptabilidad() + algoritmo.getInstalabilidad() )/2) * (pesoDePortabilidad*0.1));
 		
-		//Integer pesoDeFuncionabilidad = 10; // Los pesos varían de 0 a 1.
-	/*	Integer seguridadDeAcceso = Integer.parseInt(JOptionPane.showInputDialog("FUNCIONABILIDAD - Seguridad de acceso - Capacidad del producto software para asegurar la integridad de los datos y la confidencialidad de éstos - Características a medir: Encriptación de datos e inicio de sesión de usuarios - Ingrese calificación del 0 al 10."));		
-		Integer exactitudDeResultados = Integer.parseInt(JOptionPane.showInputDialog("FUNCIONABILIDAD - Exactitud de resultados - Capacidad del producto software para proporcionar los resultados con el grado necesario de precisión. - Ingrese calificación del 0 al 10."));
-		
-		
-		Integer utilizacionDeRecursos = Integer.parseInt(JOptionPane.showInputDialog("EFICIENCIA - Utilización de recursos\n\nEficiencia del producto software de acuerdo al porcentaje de uso de procesador que realice. - Ingrese calificación del 0 al 10."));
-		Integer comportamientoEnElTiempo = Integer.parseInt(JOptionPane.showInputDialog("EFICIENCIA - Comportamiento en el tiempo\n\nTiempo que está el producto software sin informarle al usuario del estado en que se encuentra la solicitud que realizó. - Ingrese calificación del 0 al 10."));
-		
-		
-		Integer toleranciaAFallos = Integer.parseInt(JOptionPane.showInputDialog("FIABILIDAD - Tolerancia a fallos\n\nCapacidad del producto software para mantener la integridad de los datos cuando se producen fallas en el sistema.\n\n\nCaracterísticas a medir: Protección de los datos necesarios al generarse un error y generación de log con las actividades que el sistema estaba haciendo antes de fallar. - Ingrese calificación del 0 al 10."));
-		Integer capacidadDeRecuperacionDeErrores = Integer.parseInt(JOptionPane.showInputDialog("FIABILIDAD - Capacidad de recuperación de errores\n\nCapacidad del sistema de reanudar sus actividades cuando se producen errores críticos.\n\n\nCaracterísticas a medir: Reanudación de actividades al producirse una falla crítica y reanudación del sistema desde el estado en que estaba antes de fallar. - Ingrese calificación del 0 al 10."));
-		
-			
-		Integer analizabilidadDelCodigo = Integer.parseInt(JOptionPane.showInputDialog("MANTENIBILIDAD - Capacidad del código para ser analizado\n\nAnalizabilidad del código teniendo en cuenta el porcentaje de comentarios por método y en general. - Ingrese calificación del 0 al 10."));
-		Integer cambiabilidadDelCodigo = Integer.parseInt(JOptionPane.showInputDialog("MANTENIBILIDAD - Capacidad del código para ser cambiado\n\nAnalizabilidad del código teniendo en cuenta la complejidad ciclomática del método. - Ingrese calificación del 0 al 10."));
-		Integer estabilidadDelCodigo = Integer.parseInt(JOptionPane.showInputDialog("MANTENIBILIDAD - Estabilidad\n\nPromedio de fallas del sistema por prueba. - Ingrese calificación del 0 al 10."));
-		
-		
-		Integer capacidadDeSerEntendido = Integer.parseInt(JOptionPane.showInputDialog("USABILIDAD - Capacidad de ser entendido\n\n Capacidad del producto software para ayudar a los usuarios cuando necesiten asistencia.\n\n\nCaracterísticas a medir: Posee ayuda contextual sobre menúes y botones de acción e incorporación de manual de usuario en el sistema con un menú dedicado. - Ingrese calificación del 0 al 10."));
-		Integer capacidadDeSerOperado = Integer.parseInt(JOptionPane.showInputDialog("USABILIDAD - Capacidad de ser entendido\n\n Capacidad del producto software para ayudar a los usuarios cuando necesiten asistencia.\n\n\nManual de usuario incorporado al sistema como un menú dedicado.\nMALA - REGULAR - BUENA - Ingrese calificación del 0 al 10."));
-		Integer capacidadDeSerAtractivo = Integer.parseInt(JOptionPane.showInputDialog("USABILIDAD - Capacidad de ser operado\n\nCapacidad del producto software de ser utilizado sin asistencia adicional. - Ingrese calificación del 0 al 10."));
-		
-	
-		Integer adaptabilidad = Integer.parseInt(JOptionPane.showInputDialog("PORTABILIDAD - Adaptabilidad\n\nCapacidad del producto software de adaptarse a diferentes sistemas operativos sin cambiar su estructura interna. - Ingrese calificación del 0 al 10."));
-		Integer instalabilidad = Integer.parseInt(JOptionPane.showInputDialog("PORTABILIDAD - Instalabilidad\n\nCapacidad del producto software de poder ser instalado en una cantidad mínima de pasos. - Ingrese calificación del 0 al 10."));
-		
-		*/
-		
-		Float resultado = (float) ((float)( ( algoritmo.getSeguridadDeAcceso() + algoritmo.getExactitudDeResultados() )/2) * (pesoDeFuncionabilidad*0.1));
-		resultado += (float)((float)((algoritmo.getUtilizacionDeRecursos()+algoritmo.getComportamientoEnElTiempo())/2) * (pesoDeEficiencia*0.1));
-		resultado += (float)((float)((algoritmo.getToleranciaAFallos() + algoritmo.getCapacidadDeRecuperacionDeErrores())/2) * (pesoDeFiabilidad*0.1));
-		resultado += (float)((float)((algoritmo.getAnalizabilidadDelCodigo() + algoritmo.getCambiabilidadDelCodigo() + algoritmo.getEstabilidadDelCodigo() )/3) * (pesoDeMantenibilidad*0.1));
-		resultado += (float)((float)((algoritmo.getCapacidadDeSerEntendido() + algoritmo.getCapacidadDeSerOperado() + algoritmo.getCapacidadDeSerAtractivo() )/3) * (pesoDeUsabilidad*0.1));
-		resultado += (float)((float)((algoritmo.getAdaptabilidad() + algoritmo.getInstalabilidad() )/2) * (pesoDePortabilidad*0.1));
-		
-		Float pesoMinimoParaSerBuena = (float) ((pesoDeFuncionabilidad+pesoDeEficiencia+pesoDeFiabilidad+pesoDeMantenibilidad+pesoDeUsabilidad+pesoDePortabilidad)*0.7);
+		Float resultadoFinal = resultadoFuncionabilidad + resultadoEficiencia + resultadoFiabilidad + resultadoMantenibilidad + resultadoUsabilidad + resultadoPortabilidad;
+		Float pesoMinimoParaSerExcelente = (float) ((pesoDeFuncionabilidad+pesoDeEficiencia+pesoDeFiabilidad+pesoDeMantenibilidad+pesoDeUsabilidad+pesoDePortabilidad)*1);
+		Float pesoMinimoParaSerMuyBuena = (float) ((pesoDeFuncionabilidad+pesoDeEficiencia+pesoDeFiabilidad+pesoDeMantenibilidad+pesoDeUsabilidad+pesoDePortabilidad)*0.8);
+		Float pesoMinimoParaSerBuena = (float) ((pesoDeFuncionabilidad+pesoDeEficiencia+pesoDeFiabilidad+pesoDeMantenibilidad+pesoDeUsabilidad+pesoDePortabilidad)*0.6);
 		Float pesoMinimoParaSerRegular = (float) ((pesoDeFuncionabilidad+pesoDeEficiencia+pesoDeFiabilidad+pesoDeMantenibilidad+pesoDeUsabilidad+pesoDePortabilidad)*0.4);
 		
-		if(resultado >= pesoMinimoParaSerBuena)
+		
+		if(resultadoFinal == pesoMinimoParaSerExcelente) {
+			return "EXCELENTE";
+		}
+		if(resultadoFinal >= pesoMinimoParaSerMuyBuena)
+		{
+			return "MUY BUENA";
+		}
+		if(resultadoFinal >= pesoMinimoParaSerBuena)
 		{
 			return "BUENA";
 		}
-		if(resultado >= pesoMinimoParaSerRegular)
+		if(resultadoFinal >= pesoMinimoParaSerRegular)
 		{
 			return "REGULAR";
 		}
 		return "MALA";
 	}
+	
+	public static String calculoExpFuncionabilidad(Integer pesoSegAcceso, Integer pesoExactRes) {
+		Float peso = (float) ( (pesoSegAcceso + pesoExactRes) / 2 );
+		
+		if(peso == 10) return "EXCELENTE";
+		if(peso >= 8) return "MUY BUENO";
+		if(peso >= 6) return "BUENO";
+		if(peso >= 4) return "REGULAR";
+		return "MALA";
+		
+	}
+	
+	public static String calculoExpEficiencia(Integer utilRecurso, Integer comportamientoTiemp) {
+		
+		Float peso = (float) (( utilRecurso + comportamientoTiemp ) / 2); 
+		
+		if(peso == 10) return "EXCELENTE";
+		if(peso >= 8) return "MUY BUENO";
+		if(peso >= 6) return "BUENO";
+		if(peso >= 4) return "REGULAR";
+		return "MALA";
+	}
+	
+	public static String calculoExpFiabilidad(Integer tolFallos, Integer capRecuErrores) {
+		
+		Float peso = (float) (( tolFallos + capRecuErrores ) / 2); 
+		
+		if(peso == 10) return "EXCELENTE";
+		if(peso >= 8) return "MUY BUENO";
+		if(peso >= 6) return "BUENO";
+		if(peso >= 4) return "REGULAR";
+		return "MALA";
+	}
 
 
+	public static String calculoExpMantenibilidad(Integer analizCod, Integer cambiCod, Integer estabCod  ) {
+
+		Float peso = (float) (( analizCod + cambiCod + estabCod ) / 3); 
+		
+		if(peso == 10) return "EXCELENTE";
+		if(peso >= 8) return "MUY BUENO";
+		if(peso >= 6) return "BUENO";
+		if(peso >= 4) return "REGULAR";
+		return "MALA";
+	}
+	
+	public static String calculoExpUsabilidad(Integer capEntendido, Integer capOperado, Integer capAtractivo) {
+
+		Float peso = (float) (( capEntendido + capOperado + capAtractivo ) / 3); 
+		
+		if(peso == 10) return "EXCELENTE";
+		if(peso >= 8) return "MUY BUENO";
+		if(peso >= 6) return "BUENO";
+		if(peso >= 4) return "REGULAR";
+		return "MALA";
+	}
+	
+	public static String calculoExpPortabilidad(Integer adap, Integer instal) {
+
+		Float peso = (float) (( adap + instal ) / 2); 
+		
+		if(peso == 10) return "EXCELENTE";
+		if(peso >= 8) return "MUY BUENO";
+		if(peso >= 6) return "BUENO";
+		if(peso >= 4) return "REGULAR";
+		return "MALA";
+	}
+	
 	//Getters and setters
 		public  Integer getSeguridadDeAcceso() {
 			return seguridadDeAcceso;
@@ -255,6 +311,64 @@ public class AlgoritmoDeCalidad {
 		public void setInstalabilidad(Integer instalabilidad) {
 			this.instalabilidad = instalabilidad;
 		}
+
+		public static Float getResultadoFuncionabilidad() {
+			return resultadoFuncionabilidad;
+		}
+
+		public static void setResultadoFuncionabilidad(Float resultadoFuncionabilidad) {
+			AlgoritmoDeCalidad.resultadoFuncionabilidad = resultadoFuncionabilidad;
+		}
+
+		public static Float getResultadoEficiencia() {
+			return resultadoEficiencia;
+		}
+
+		public static void setResultadoEficiencia(Float resultadoEficiencia) {
+			AlgoritmoDeCalidad.resultadoEficiencia = resultadoEficiencia;
+		}
+
+		public static Float getResultadoFiabilidad() {
+			return resultadoFiabilidad;
+		}
+
+		public static void setResultadoFiabilidad(Float resultadoFiabilidad) {
+			AlgoritmoDeCalidad.resultadoFiabilidad = resultadoFiabilidad;
+		}
+
+		public static Float getResultadoMantenibilidad() {
+			return resultadoMantenibilidad;
+		}
+
+		public static void setResultadoMantenibilidad(Float resultadoMantenibilidad) {
+			AlgoritmoDeCalidad.resultadoMantenibilidad = resultadoMantenibilidad;
+		}
+
+		public static Float getResultadoUsabilidad() {
+			return resultadoUsabilidad;
+		}
+
+		public static void setResultadoUsabilidad(Float resultadoUsabilidad) {
+			AlgoritmoDeCalidad.resultadoUsabilidad = resultadoUsabilidad;
+		}
+
+		public static Float getResultadoPortabilidad() {
+			return resultadoPortabilidad;
+		}
+
+		public static void setResultadoPortabilidad(Float resultadoPortabilidad) {
+			AlgoritmoDeCalidad.resultadoPortabilidad = resultadoPortabilidad;
+		}
+
+		public static Float getResultadoFinal() {
+			return resultadoFinal;
+		}
+
+		public static void setResultadoFinal(Float resultadoFinal) {
+			AlgoritmoDeCalidad.resultadoFinal = resultadoFinal;
+		}
+		
+
 
 	
 
