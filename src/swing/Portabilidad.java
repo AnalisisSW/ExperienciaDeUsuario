@@ -59,7 +59,7 @@ public class Portabilidad extends JFrame {
 		setTitle("Portabilidad");
 		this.alg = algoritmo;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 606, 498);
+		setBounds(100, 100, 520, 498);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -228,7 +228,7 @@ public class Portabilidad extends JFrame {
 				dispose();
 			}
 		});
-		btnFinalizar.setBounds(463, 408, 89, 23);
+		btnFinalizar.setBounds(371, 408, 89, 23);
 		contentPane.add(btnFinalizar);
 	}
 	

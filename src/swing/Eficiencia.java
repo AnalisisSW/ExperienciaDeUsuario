@@ -58,7 +58,7 @@ public class Eficiencia extends JFrame {
 		this.algoritmo = algoritmo;
 		setTitle("Eficiencia");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 609, 527);
+		setBounds(100, 100, 510, 527);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -221,7 +221,7 @@ public class Eficiencia extends JFrame {
 //				fi.mostrarVista();
 			}
 		});
-		btnSiguiente.setBounds(456, 442, 97, 25);
+		btnSiguiente.setBounds(354, 442, 97, 25);
 		contentPane.add(btnSiguiente);
 	}
 	

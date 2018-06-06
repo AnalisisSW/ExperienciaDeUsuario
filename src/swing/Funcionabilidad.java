@@ -65,7 +65,7 @@ public class Funcionabilidad extends JFrame {
 		this.algoritmo = algo;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setTitle("Funcionabilidad");
-		setBounds(100, 100, 608, 526);
+		setBounds(100, 100, 510, 526);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -150,7 +150,7 @@ public class Funcionabilidad extends JFrame {
 				
 			}
 		});
-		btnSiguiente.setBounds(361, 442, 139, 23);
+		btnSiguiente.setBounds(332, 442, 107, 23);
 		contentPane.add(btnSiguiente);
 		
 		JButton btnSalir = new JButton("Salir");
@@ -159,11 +159,11 @@ public class Funcionabilidad extends JFrame {
 				System.exit(0);
 			}
 		});
-		btnSalir.setBounds(56, 442, 138, 23);
+		btnSalir.setBounds(56, 442, 102, 23);
 		contentPane.add(btnSalir);
 	
 		JTextPane txtpnCapacidadDelProducto = new JTextPane();
-		txtpnCapacidadDelProducto.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		txtpnCapacidadDelProducto.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		txtpnCapacidadDelProducto.setBackground(SystemColor.activeCaptionBorder);
 		txtpnCapacidadDelProducto.setEditable(false);
 		txtpnCapacidadDelProducto.setText("\u2022 Capacidad del producto software para proporcionar los resultados con el grado necesario de precisi\u00F3n.");

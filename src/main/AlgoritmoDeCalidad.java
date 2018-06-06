@@ -80,11 +80,11 @@ public class AlgoritmoDeCalidad {
 		 resultadoUsabilidad = (float)((float)((algoritmo.getCapacidadDeSerEntendido() + algoritmo.getCapacidadDeSerOperado() + algoritmo.getCapacidadDeSerAtractivo() )/3) * (pesoDeUsabilidad*0.1));
 		 resultadoPortabilidad = (float)((float)((algoritmo.getAdaptabilidad() + algoritmo.getInstalabilidad() )/2) * (pesoDePortabilidad*0.1));
 		
-		Float resultadoFinal = resultadoFuncionabilidad + resultadoEficiencia + resultadoFiabilidad + resultadoMantenibilidad + resultadoUsabilidad + resultadoPortabilidad;
-		Float pesoMinimoParaSerExcelente = (float) ((pesoDeFuncionabilidad+pesoDeEficiencia+pesoDeFiabilidad+pesoDeMantenibilidad+pesoDeUsabilidad+pesoDePortabilidad)*1);
-		Float pesoMinimoParaSerMuyBuena = (float) ((pesoDeFuncionabilidad+pesoDeEficiencia+pesoDeFiabilidad+pesoDeMantenibilidad+pesoDeUsabilidad+pesoDePortabilidad)*0.8);
-		Float pesoMinimoParaSerBuena = (float) ((pesoDeFuncionabilidad+pesoDeEficiencia+pesoDeFiabilidad+pesoDeMantenibilidad+pesoDeUsabilidad+pesoDePortabilidad)*0.6);
-		Float pesoMinimoParaSerRegular = (float) ((pesoDeFuncionabilidad+pesoDeEficiencia+pesoDeFiabilidad+pesoDeMantenibilidad+pesoDeUsabilidad+pesoDePortabilidad)*0.4);
+		float resultadoFinal = resultadoFuncionabilidad + resultadoEficiencia + resultadoFiabilidad + resultadoMantenibilidad + resultadoUsabilidad + resultadoPortabilidad;
+		float pesoMinimoParaSerExcelente = (float) ((pesoDeFuncionabilidad+pesoDeEficiencia+pesoDeFiabilidad+pesoDeMantenibilidad+pesoDeUsabilidad+pesoDePortabilidad)*1);
+		float pesoMinimoParaSerMuyBuena = (float) ((pesoDeFuncionabilidad+pesoDeEficiencia+pesoDeFiabilidad+pesoDeMantenibilidad+pesoDeUsabilidad+pesoDePortabilidad)*0.8);
+		float pesoMinimoParaSerBuena = (float) ((pesoDeFuncionabilidad+pesoDeEficiencia+pesoDeFiabilidad+pesoDeMantenibilidad+pesoDeUsabilidad+pesoDePortabilidad)*0.6);
+		float pesoMinimoParaSerRegular = (float) ((pesoDeFuncionabilidad+pesoDeEficiencia+pesoDeFiabilidad+pesoDeMantenibilidad+pesoDeUsabilidad+pesoDePortabilidad)*0.4);
 		
 		
 		if(resultadoFinal == pesoMinimoParaSerExcelente) {
@@ -109,8 +109,8 @@ public class AlgoritmoDeCalidad {
 		Float peso = (float) ( (pesoSegAcceso + pesoExactRes) / 2 );
 		
 		if(peso == 10) return "EXCELENTE";
-		if(peso >= 8) return "MUY BUENO";
-		if(peso >= 6) return "BUENO";
+		if(peso >= 8) return "MUY BUENA";
+		if(peso >= 6) return "BUENA";
 		if(peso >= 4) return "REGULAR";
 		return "MALA";
 		
@@ -121,8 +121,8 @@ public class AlgoritmoDeCalidad {
 		Float peso = (float) (( utilRecurso + comportamientoTiemp ) / 2); 
 		
 		if(peso == 10) return "EXCELENTE";
-		if(peso >= 8) return "MUY BUENO";
-		if(peso >= 6) return "BUENO";
+		if(peso >= 8) return "MUY BUENA";
+		if(peso >= 6) return "BUENA";
 		if(peso >= 4) return "REGULAR";
 		return "MALA";
 	}
@@ -132,8 +132,8 @@ public class AlgoritmoDeCalidad {
 		Float peso = (float) (( tolFallos + capRecuErrores ) / 2); 
 		
 		if(peso == 10) return "EXCELENTE";
-		if(peso >= 8) return "MUY BUENO";
-		if(peso >= 6) return "BUENO";
+		if(peso >= 8) return "MUY BUENA";
+		if(peso >= 6) return "BUENA";
 		if(peso >= 4) return "REGULAR";
 		return "MALA";
 	}
@@ -144,8 +144,8 @@ public class AlgoritmoDeCalidad {
 		Float peso = (float) (( analizCod + cambiCod + estabCod ) / 3); 
 		
 		if(peso == 10) return "EXCELENTE";
-		if(peso >= 8) return "MUY BUENO";
-		if(peso >= 6) return "BUENO";
+		if(peso >= 8) return "MUY BUENA";
+		if(peso >= 6) return "BUENA";
 		if(peso >= 4) return "REGULAR";
 		return "MALA";
 	}
@@ -155,8 +155,8 @@ public class AlgoritmoDeCalidad {
 		Float peso = (float) (( capEntendido + capOperado + capAtractivo ) / 3); 
 		
 		if(peso == 10) return "EXCELENTE";
-		if(peso >= 8) return "MUY BUENO";
-		if(peso >= 6) return "BUENO";
+		if(peso >= 8) return "MUY BUENA";
+		if(peso >= 6) return "BUENA";
 		if(peso >= 4) return "REGULAR";
 		return "MALA";
 	}
@@ -166,8 +166,8 @@ public class AlgoritmoDeCalidad {
 		Float peso = (float) (( adap + instal ) / 2); 
 		
 		if(peso == 10) return "EXCELENTE";
-		if(peso >= 8) return "MUY BUENO";
-		if(peso >= 6) return "BUENO";
+		if(peso >= 8) return "MUY BUENA";
+		if(peso >= 6) return "BUENA";
 		if(peso >= 4) return "REGULAR";
 		return "MALA";
 	}

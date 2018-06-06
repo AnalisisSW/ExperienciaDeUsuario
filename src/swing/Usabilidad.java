@@ -55,7 +55,7 @@ public class Usabilidad extends JFrame {
 		setTitle("Usabilidad");
 		this.alg = algoritmo;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 602, 643);
+		setBounds(100, 100, 527, 643);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -278,7 +278,7 @@ public class Usabilidad extends JFrame {
 				dispose();
 			}
 		});
-		btnFinalizar.setBounds(445, 558, 97, 25);
+		btnFinalizar.setBounds(399, 558, 97, 25);
 		contentPane.add(btnFinalizar);
 	}
 	

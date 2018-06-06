@@ -56,7 +56,7 @@ public class Mantenibilidad extends JFrame {
 		setTitle("Mantenibilidad");
 		this.alg = algoritmo;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 644, 589);
+		setBounds(100, 100, 564, 589);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -278,7 +278,7 @@ public class Mantenibilidad extends JFrame {
 				
 			}
 		});
-		btnSiguiente.setBounds(491, 512, 97, 25);
+		btnSiguiente.setBounds(433, 504, 97, 25);
 		contentPane.add(btnSiguiente);
 	}
 	

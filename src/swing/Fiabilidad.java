@@ -63,7 +63,7 @@ public class Fiabilidad extends JFrame {
 		this.algoritmo = algo;
 		setTitle("Fiabilidad");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 600, 511);
+		setBounds(100, 100, 532, 511);
 		contentPane = new JPanel();
 		contentPane.setToolTipText("asd");
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -210,7 +210,7 @@ public class Fiabilidad extends JFrame {
 				dispose();
 			}
 		});
-		btnSiguiente.setBounds(420, 427, 89, 23);
+		btnSiguiente.setBounds(353, 427, 109, 23);
 		contentPane.add(btnSiguiente);
 		
 		JButton btnSalir = new JButton("Salir");
@@ -219,7 +219,7 @@ public class Fiabilidad extends JFrame {
 				System.exit(0);
 			}
 		});
-		btnSalir.setBounds(10, 427, 89, 23);
+		btnSalir.setBounds(52, 427, 109, 23);
 		contentPane.add(btnSalir);
 	}
 	
